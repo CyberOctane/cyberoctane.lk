@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #111;
+}
+
+#menu-btn {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/*----- projects ------*/
+
+#projects-grid {
+    display: grid;
+    width: 100vw;
+    padding-top: 20vw;
+    grid-template-columns: 100%;
+}
+
+.project-thumb {
+    background-color: #101315;
+    height: 60vh;
+}
+
+.project-thumb a {
+    position: relative;
+    height: inherit;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-desc {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 45%;
+    height: 45%;
+    padding: 6%;
+    background-color: floralwhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-desc img {
+    position: relative;
+    align-self: flex-end;
+    width: 30px;
+}
+
+.project-desc hr {
+    border: black solid 0.8px;
+}
+
+.project-desc h1 {
+    font-size: 16px;
+    color: #222222;
+}
+
+.project-desc p {
+    position: relative;
+    font-size: 14px;
+    line-height: 0.9;
+    font-weight: 400;
+    color: #111;
+    margin: 0 ;
+}
+
+@media (min-width:576px) {
+    #projects-grid {
+        padding-top: 10vh;/* =nav height */
+        grid-template-columns: 50% 50%;
+    }
+    
+    .project-thumb {
+        height: 60vh;
+    }
+
+}
+
+@media (min-width:768px) {
+    
+    #projects-grid {
+        padding-top: 10vh;/* =nav height */
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    .project-thumb {
+        height: 40vh;
+    }
+
+    .project-thumb img {
+        min-height: 100%;
+    }
+
+    .project-thumb a {
+        justify-content: center;
+    }
+    
+    .project-desc { 
+        position: absolute;
+        bottom: auto;
+        left: auto;
+        right: 50%;
+        transform: translate(50%, 0%);
+        align-self: center;
+        width: 0%;
+        height: 0%;
+        padding: 0;
+        border-radius: 50%;
+        transition: width 0.2s, height 0.2s, border-radius 0.5s;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .project-thumb a:hover .project-desc {
+        width: 40vw;
+        height: 40vw;
+    }
+    
+    .project-desc img {
+        align-self: center;
+        min-height: auto;
+    }
+
+    .project-desc hr {
+        border: black solid 0.5px;
+        width: 20%;
+        margin: 6% 0;
+    }
+
+    .project-desc h1 {
+        font-size: 24px;
+    }
+    
+    .project-desc p {
+        font-size: 16px;
+        margin-top: 3%;
+    }
+
+}
