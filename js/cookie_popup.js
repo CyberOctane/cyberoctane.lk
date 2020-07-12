@@ -10,7 +10,7 @@ function setCookie(cname, cvalue, exdays, cpath) {
     var expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + (exdays || 365));
 
-    var cookie = [cname + "=" + cvalue, 'expires=' + expirationDate.toUTCString(), 'path=' + (cpath || '/')];
+    var cookie = [cname + "=" + cvalue, 'expires=' + expirationDate.toUTCString(), 'path=' + (cpath || '/'), 'SameSite=None', 'Secure' ];
 
     document.cookie = cookie.join(';');
 }
@@ -60,7 +60,7 @@ function checkCookie() {
                 }]
             ],
             onOpening: function (instance, toast) {
-                console.info('callback abriu!');
+                console.info('No Cookie Found !');
             },
             onClosing: function (instance, toast, closedBy) {
                 console.info('closedBy: ' + closedBy); // tells if it was closed by 'drag' or 'button'
